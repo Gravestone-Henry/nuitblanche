@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+    cursor: crosshair;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #050605;
+    color: #4b5d43; /* Verde lodo sujo */
+    font-family: 'Courier New', Courier, monospace;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Textura Grunge de fundo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Container Gigante */
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    background: radial-gradient(circle, #0a0c0a 0%, #050605 100%);
+}
+
+#feed {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 100px;
+    mask-image: linear-gradient(to top, black 80%, transparent 100%);
+}
+
+/* Estilo da Mensagem */
+.msg-block {
+    border-bottom: 1px solid #1a1d1a;
+    padding: 10px 0;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.timestamp {
+    color: #2d3629;
+    font-size: 0.8rem;
+    margin-right: 10px;
+}
+
+.user {
+    color: #6b7d63;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+
+.content {
+    color: #8a9a85; /* Verde mais claro para leitura */
+}
+
+/* Barra de Input fixa embaixo */
+.terminal-input {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    background: #050605;
+    border-top: 2px solid #1a1d1a;
+    padding: 15px;
+    z-index: 5;
+}
+
+#username {
+    width: 150px;
+    border: none;
+    background: #0a0c0a;
+    color: #4b5d43;
+    padding: 10px;
+    border-right: 1px solid #1a1d1a;
+    outline: none;
+}
+
+#message-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: #a8bba0;
+    padding: 10px;
+    font-family: inherit;
+    outline: none;
+}
+
+.system-msg {
+    text-align: center;
+    font-size: 0.7rem;
+    opacity: 0.4;
+    margin: 20px 0;
+}
+
+/* Scrollbar suja */
+#feed::-webkit-scrollbar { width: 5px; }
+#feed::-webkit-scrollbar-thumb { background: #1a1d1a; }
+
+/* Efeito de Flicker (piscar sutil da tela) */
+@keyframes flicker {
+    0% { opacity: 0.97; }
+    5% { opacity: 0.95; }
+    10% { opacity: 0.9; }
+    15% { opacity: 0.99; }
+    100% { opacity: 1; }
+}
+
+body {
+    /* ... mantenha o que já tinha e adicione: */
+    animation: flicker 0.1s infinite;
+}
+
+/* Linha de Interferência VHS (Ruído de rastreio) */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(75, 93, 67, 0.2); /* Mesmo verde sujo */
+    opacity: 0.5;
+    z-index: 100;
+    pointer-events: none;
+    animation: vhs-line 8s linear infinite;
+}
+
+@keyframes vhs-line {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+
+/* Efeito de Distorção ao digitar (opcional) */
+input:focus {
+    text-shadow: 2px 0 #ff000033, -2px 0 #0000ff33; /* Aberração cromática leve */
+}
+
+.vhs-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px; /* Linhas horizontais mais grossas */
+    z-index: 99;
+    pointer-events: none;
+    opacity: 0.3;
+}
