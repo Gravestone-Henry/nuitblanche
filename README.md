@@ -4,7 +4,7 @@
 
 **NuitBlanche** é um experimento de comunicação em tempo real focado em atmosfera e feedback tátil/auditivo. No centro da aplicação está o **Pustoy** (Vazio), um chat onde a presença é fugaz e as mensagens são mediadas por uma interface que evoca melancolia e tecnologia analógica.
 
-## 🪽 A Estética
+##  A Estética
 O projeto não é apenas um chat; é uma experiência sensorial:
 - **Visual:** Filtros de distorção VHS e scanlines que dão a sensação de uma tela de tubo antiga.
 - **Auditivo:** Implementação de sons de teclados mecânicos para cada caractere digitado, devolvendo o peso tátil à escrita digital.
